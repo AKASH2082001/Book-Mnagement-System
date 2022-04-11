@@ -59,10 +59,7 @@ def login():
             return redirect('/login')
         else:
             return render_template("userlogin.html", status=True)
-
-
     else:
-
         return render_template("userlogin.html", status=False)
 
 
@@ -86,10 +83,7 @@ def userRegister():
             return redirect('/')
         else:
             return render_template("userregister.html", status=True)
-
-
     else:
-
         return render_template("userregister.html", status=False)
 
 
@@ -159,7 +153,6 @@ def deletion():
         getName = request.form["name"]
         connection.execute(" DELETE FROM BOOK WHERE NAME='" + getName + "'")
         connection.commit()
-
         return redirect('/view')
     return render_template("delete.html")
 
@@ -175,12 +168,8 @@ def updation():
         if result is None:
             print("Book Name Not Exist")
         else:
-
             return render_template("update.html", search=result, status=True)
-
-
     else:
-
         return render_template("update.html", search=[], status=False)
 
 
